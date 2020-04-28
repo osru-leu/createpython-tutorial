@@ -40,7 +40,7 @@
 # Create a inventory with a max of 10 items
 # Each item should have an id (0-9)
 # Ask the user if they want to add a liqour or exit
-# Eample Flow:
+# Example Flow:
 # What do you want to do (add / exit)? add
 #   What brand? Stoli
 #   What type? Vodka
