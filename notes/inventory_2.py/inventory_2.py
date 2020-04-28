@@ -1,17 +1,20 @@
-def is_type_valid(lliquor_type):
-    VALID_TYPES = ['VODKA', 'TEQUILA']
-    if liquor_type.lower() in VALID_TYPES
-        return True
-    return False
+""" Inventory 2 """
 
+VALID_TYPES = ['VODKA', 'TEQUILA']
+
+
+def ask_for_type():
+    """ ask for type """
+    while True:
+        liqour_type = input('What liqour type? ')
+        if liqour_type.upper() in VALID_TYPES:
+            return liqour_type.upper()
+        print(f'{liqour_type} is not valid.  Try again.\n')
 
 
 if __name__ == "__main__":
     STORE = []
-    
-    if not is_type_valid('vodkas'):
-        print('Type is not valid, try again.')
-    exit()
+
     while True:
         if len(STORE) >= 2:
             print('Warehouse is full !!!')
@@ -22,8 +25,8 @@ if __name__ == "__main__":
         if ACTION.lower() != 'add':
             print(f'{ACTION} is not a valid command.\n')
             continue
+        TYPE = ask_for_type()
         NAME = input('What brand? ')
-        TYPE = input('What type? ').upper()
         PRICE = input('What price? ')
         PRICE = float(PRICE)
         ID = len(STORE)
