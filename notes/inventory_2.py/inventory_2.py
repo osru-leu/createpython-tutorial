@@ -2,14 +2,28 @@
 
 VALID_TYPES = ['VODKA', 'TEQUILA']
 
+def is_float(string):
+    """CHECKS IF STRING IS A FLOAT"""
+    if string.replace('.','',1).isdigit():
+        return True
+    return False
 
 def ask_for_type():
     """ ask for type """
-    while True:
+    while True:             ##### GO THROUGH THE PUSHES AND WRITE OUT HOW THE CODE WORKS THEN TYPE THE CODE.###
         liqour_type = input('What liqour type? ')
         if liqour_type.upper() in VALID_TYPES:
             return liqour_type.upper()
         print(f'{liqour_type} is not valid.  Try again.\n')
+
+def ask_for_price():
+    """ASK FOR PRICE"""
+    while True:
+        price = input('What price?')
+        if is_float(price):
+            return float(price)
+        print(f'{price} is not valid.  Try again.\n')
+
 
 
 if __name__ == "__main__":
@@ -27,8 +41,7 @@ if __name__ == "__main__":
             continue
         TYPE = ask_for_type()
         NAME = input('What brand? ')
-        PRICE = input('What price? ')
-        PRICE = float(PRICE)
+        PRICE = ask_for_price()
         ID = len(STORE)
         STORE.append({
             'id': ID,

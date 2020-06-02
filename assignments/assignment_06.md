@@ -25,7 +25,7 @@ What action would you like to perform (list/add/delete/exit)? list
 Inventory:
 [{'name': 'Stoli', 'type': 'VODKA', 'price': 123.07}, {'name': 'Patron', 'type': 'TEQUILA', 'price': 124.97}, {'name': 'Titos', 'type': 'VODKA', 'price': 13.07}]
 
-What action would you like to perform (list/add/delete/exit)? add
+What action would you like to perform (list/add/delete/exit)? add 
 
 What is the name of the item? Absolute
 What is the item type? VODKA
