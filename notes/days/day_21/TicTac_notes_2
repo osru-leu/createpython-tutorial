@@ -1,0 +1,119 @@
+My take, translation and spitballing of video session
+
+Checking for a winner:
+```bash
+-Checking for horizontal combinations:
+    86* --> BOARD = [
+                      0  1  2
+    HORZ_CHECK_1 = 0 [1, 2, 3],
+    HORZ_CHECK_2 = 1 [4, 5, 6],
+    HORZ_CHECK_3 = 2 [7, 8, 9]
+            ]
+    -1) check for empty positions
+    
+    for positions in HORZ_CHECK_1: # MAYBE THIS LOOP MAYBE NOT
+        if positions == None # IF THERE ARE EMPTY SPACES
+            continue -as an empty position means there cant be 3 in a row
+    -2) if positions != None: IF THERE ARE NOT EMPTY SPACES CHECK FOR CHARACTERS
+            
+            if positions == x:
+                print(x wins)
+                break
+            if positions == y:
+                print(y wins)
+                break
+            else:
+                continue
+
+        Make the above a function(universal) so it can be called for each array:
+            -def_check_positions(horz_array):
+
+                for positions in horz_array: # MAYBE THIS LOOP MAYBE NOT
+
+                    if positions == None: # or if position == to something else? nah
+                        continue
+                    break???????????????
+                    if positions != None:
+                        if positions == x: ***THIS WILL NOT WORK! YOU WILL PRINT X WINS AS SOON
+                            print(x wins)   AS AN X IS REACHED
+                            break
+                        if positions == y:
+                            print(y wins)
+                            break
+                        else:
+                            continue
+                        ---OR---
+                    if position ==
+
+
+RETURNING THE BOARD(so the user knows where their charactes are:
+    return updated board after each play
+    player_turn_x = input('''Where would you like to place your character player 'X'?
+                            [  1  |  2  |  3  ]
+                            [  4  |  5  |  6  ]
+                            [  7  |  8  |  9  ]    ''') do player player_turn_x and
+                                                                player_turn_o?
+    call winner check functions:
+
+        if player_turn_x == {0, 0}:
+            check_horizontal_pos()
+            check_vertical_pos()
+            return [  X  |  2  |  3  ]
+                   [  4  |  5  |  6  ]
+                   [  7  |  8  |  9  ] <---how do we continously return an upadated board?
+        
+
+
+***FURTHER DEPTH- DEEPER EXPLANATION OF DEAN'S/OUR PSEUDO
+    (option 2: val = '{pos1 value}', check if pos2 = {val}, check pos3={val})
+        [  X  |  2  |  3  ]
+        [  4  |  5  |  6  ] if position 1 is not empty, does..
+        [  7  |  8  |  9  ] position 1 = 'X'. Does position 2 = 'X'? Does position 3 = 'X'?
+
+        UGLY BULKY LESS EFFICIENT CODE:
+            FOR 'X's AND 'O's:
+        if {0,0}=='X':
+            continue
+        else:
+            break  <---BREAK TO GO TO THE NEXT HORIZONTAL ARRAY 
+        if {0, 1}=='X':
+            continue
+        else:   
+            break
+        if {0, 2}== 'X':
+            print('X' wins!)
+
+        FOR 'O's:
+
+        if {0,0}=='O':
+            continue
+        else:
+            break  <---BREAK TO GO TO THE NEXT HORIZONTAL ARRAY 
+        if {0, 1}=='O':
+            continue
+        else:   
+            break
+        if {0, 2}== 'O':
+            print('O' wins!)
+#check to see if all characters are the same in a row
+def check_for_winner(a, b, c)
+    checks to see if any 3 characters are ==
+    if not it returns None
+    if yes, it returns the character, x or o
+if the value of postion one equals X...
+
+
+
+in the video we say:
+-make check_for_winner function
+    -store the function in a variable{result}
+    -if result:
+    print(f'Winner is {result})
+Needs:
+a display function that returns the position
+def display():
+    QUAD_SELECT = input('''Where would you like to place your character?
+                            [  1  |  2  |  3  ]
+                            [  4  |  5  |  6  ]
+                            [  7  |  8  |  9  ]    ''')
+                            

@@ -1,0 +1,180 @@
+CLASS OBJECTS
+    http://www.geeksforgeeks.org/python-classes-and-objects/
+
+
+Class - A class is a user-defined blueprint or prototype from which objects are created. Classes provide a means of 
+bundling datat and functionality together. Creating a new class creates a new type of object, allowing
+new instances of that type to be made. Each class instance can have attributes attached to it for maintaining
+its state. Class instances can also have methods (defined by its class) for modifying its state.
+
+Some points on Python class:
+    -Classes are created by keyword class.
+    -Attributes are the variables that belong to class.
+    -Attributes are always public and can be accessed using dot (.) operator. Ex: Myclass.Myattribute
+
+An Object is an instance of a Class. A class is like a blueprint while an instance
+is a copy of the class with actual values.
+It's not an idea anymore, it's an actual dog, like a dog  of breed pug who's seven years old.
+You can have many dogs to create many different instances, but without the class as a guide,
+you would be lost, not knowing what information is required.
+
+An object consists of:
+    -State: it is represented by attributes of an object. It also reflects the properties of an object
+    -Behavior: It is represented by methods of an object. It also reflects the response of an object with other objects.
+    -Identity: It gives a unique Name to an object and enables one object to interact with other objects.
+
+In this example;
+class Dog:
+    pass
+
+    Identity:               State/ Attributes                   Behaviors
+    Name of dog                 Breed, Age, Color              Bark, Sleep, Eat
+
+class Dog:
+    def __init__(self, breed, age, color, bark=None, sleep=None, eat=None):
+        self.breed = breed
+        self.age = age
+        self.color = color
+        self.bark = bark
+        self.sleep = sleep
+        self.eat = eat
+
+    def setBarkBehavior(self, obj):
+        self.bark = obj
+
+    def getBarkBehavior(self):
+        return self.bark
+
+class bark(ABC):
+
+
+
+
+Declaring Objects(Also called instantiating a class)
+
+When an oject of a class is created, the class is said to be instantiated. All the instances share
+the attributes and the behavior of the class. But the values of those attributes, i.e. the state are unique
+for each object. A single class may have anynumber of instances. This just means the different objects
+you are creating that use the class as a resource are following that particular class blueprint. One object
+can be 10 years old while another is 8. Both objects using the attribute age.
+
+Declaring an object - 
+
+# Python program to demonstrate instantiating a class
+
+class Dog:
+    # a simple class attribute
+    attr1 = 'mammal'
+    attr2 = 'dog'
+
+    def fun(self):
+        print("I'm a", self.attr1)
+        print("I'm a", self.attr2)
+
+# Driver code
+# Object instantiation
+Rodger = Dog()
+
+# Acessing class attributes
+# and method through objects
+print(Rodger.attr1)
+Rodger.fun()
+
+Output:
+
+mammal
+I'm a mammal
+I'm a dog
+
+The self:
+
+- Class methods must have an extra first parameter in method defintion. We do not give a value for this
+parameter when we call the method, Python provides it.
+- If we have a method which takes no arguments, then we still have to have one argument.
+- This is similar to this pointer in C++ and this reference in java.
+
+When we call a method of this object as myobject.method(arg1, arg2), this is automatically converted by 
+Python into MyClass.method(myobject, arg1, arg2)- this is all the special self is about.
+
+__init__ method
+
+The __init__ method is similiar to constructors in C++ and Java. Constructors are used to initialize
+the objects state. Like methods, a constructor also contains a collection of statements(i.e.instructions)
+that are executed at the time of Object creation. It is run as soon as an object of a class isinstantiated.
+The method is useful to do any initialization you want to do with your object.
+
+# A sample class with init method
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def say_hi(self):
+        print('Hello, my name is', self.name, 'I am', self.age)
+
+p = Person('Nicky', 56)
+p.say_hi()
+
+Output:
+Hello, my name is Nicky I' am 56
+
+Class and Instance variables
+
+Instance variables are for data unique to each instance and class variables are for attributes and methods
+shared by all instances of the class. Instance variables are variables whose value is assigned inside a 
+constructor or method with self whereas class variables are variables whose value is assigned in the class.
+
+Defining instance variable using contstructor.
+
+# Python program to show that the variables with a value assigned in the class declaration, are class
+# variables and variables inside of methods and constructors are instance variables
+
+# class for Dog
+class Dog:
+
+    # Class variable
+    animal = 'Dog'
+
+    # The init method or constructor
+    def __init__(self, breed, color):
+
+        # Instance variable
+        self.breed = breed
+        self.color = color
+
+# Objects of dog class
+Rodger = Dog("Pug", "brown")
+Buzo = Dog("Bulldog", "black")
+
+print('Rodger details:')
+print('Rodger is a', Rodger.animal)
+print('Breed: ', Rodger.breed)
+print('Color: ', Rodger.color)
+
+print('\nBuzo details: ')
+print('Buzo is a' , Buzo.animal)
+print('Breed: ', Buzo.breed)
+print('Color: ', Buzo.color)
+
+Defining instance variable using normal method.
+
+# Python program to show that we can create instance variables inside methods
+
+# Class for Dog
+class Dog:
+
+    # Class variable
+    animal = 'dog'
+
+    # The init method or constructor
+    def __init__(self, breed):
+        # Instance variable
+        self.breed = breed
+
+    # Adds an instance variable
+    def setColor(self, color):
+        self.color = color
+
+    # Retrieves instance variable
+    def getColor(self):
+        return self.color

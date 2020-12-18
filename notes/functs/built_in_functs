@@ -1,0 +1,87 @@
+np.unique(ar, return_index=False, return_inverse=False, return_counts=False, axis=None)
+    - function of Numpy
+    -The unique function is used to find the unique elements
+    of an array. Returns the sorted unique elements of an array.
+
+getattr()
+    - syntax: getattr(obj, 'key', def)
+    - parameters:
+        -obj: the object whose attributes need to be processed
+        -key: the attribute of the object or this could be a variable but the syntax is in ''
+        -def: the default value that needs to be printed in case the attribute is not found
+    - used to access the attribute value of an object and also give an option of executing the default
+    value in case of unavailability of the key. So, if you are trying to get an attribute that doesnt exist
+    you can supply a value in the default parameter, else this parameter is automatically set to None
+
+
+set()
+    - creates a set object; iterable
+    - used to store multiple items to a single variable
+    - set collection is both unordered and unindexed
+    Ex: 
+        this_set = {"apple", "banana", "cherry"}
+        print(this_set)
+    Output:
+        {'cherry', 'apple', 'banana'}
+
+sort()
+    - sorts the elements of a given list in a specific ascending or descending order.
+    The syntax of the sort() methood is: list. sort(key= ..., reverse=True or False)
+    Alternatively, you an also use Python's built-in sorted() function for the same purpose
+
+replace()
+    #use replace function?
+    base_str = ''' I love pizza.
+    pizza if my guilty pleasure.
+    I believe pizza doesnt have calories.
+    Pizza should be declared king of food. '''
+
+    print(base_str.replace('pizza', 'fudge cake'))
+    #replace('old', 'new') this funct replaces the old string with a new one
+
+split()
+    # letters = 'RL'
+    # print(letters)
+    # print('---------------------------------------------')
+
+    # new = letters.split("RL")
+    # print(new)
+    # print('---------------------------------------------')
+
+    # problems = 'broke, pale, short, nerdy'
+    # print(problems)
+    # l = problems.split(", ")
+join()
+    # print(l)
+    # print('---------------------------------------------')
+    # joined = ' and '.join(l)
+    # print(joined)
+    # print('---------------------------------------------')
+index()
+    The list index() method can take a maximum of three arguments:
+
+    element - the element to be searched
+    start (optional) - start searching from this index
+    end (optional) - search the element up to this index
+
+type()
+    when used over say a variable the type of the attribute object will be returned in the
+    terminal. 
+    Ex. selection = int(input("player 1 make your selection"))
+    print(type(selection))
+        out - <class 'int'>
+
+item()
+   syntax: Dictionary.items()
+   Takes no parameters
+   Returns a view object that displays a list of a dictionary's (key, value) tuple pair
+   *may not return items in the same order*
+   Example:
+    Dictionary1 = { 'A': 'Geeks', 'B': 4, 'C': 'Geeks' }
+    print(Dictionary1.items())
+    Ouptut: dict_items([('A', 'Geeks'), ('B', 4), ('C', 'Geeks')])
+
+round()
+    syntax: round(v * 0.9, 2) -> round(number, number of digits)
+    round() rounds off to the given number of digits and returns the floating point number, if no
+    number of digits is provided for round off, it rounds off the number to the nearest integer.     

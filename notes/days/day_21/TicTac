@@ -1,0 +1,57 @@
+TIC TAC TOE
+
+what do we need?
+    -a BOARD
+        -BOARD = matrix of 9 places or a 3x3:
+            BOARD = [
+                 0  1  2
+              0 [1, 2, 3],
+              1 [4, 5, 6],
+              2 [7, 8, 9]
+            ]
+        -for every turn print the board in the terminal with current occupied quadrants
+        -if making a GUI show board constantly on screen alternate X's and O's for every other turn taken 
+        by player(
+            while True:
+                BOARD
+        )
+            -ask for input(character placement)
+            -return updated board with occupied spaces
+            
+        -logic that does not allow 2 character X and O to exist in the same quadrant
+        -logic that announces a winner when 3 spaces in a row are taken
+            if char_x == position
+            if char_o == position
+    -CHARACTERS X's and O's
+        assign first player X's automatically upon choosing space
+        char_x = 'X'
+        char_o = 'O'
+
+
+
+
+ 
+
+def position_select():
+     QUAD_SELECT = input('''Where would you like to place your character?
+                            [  1  |  2  |  3  ]
+                            [  4  |  5  |  6  ]
+                            [  7  |  8  |  9  ]    ''') 
+
+
+print('First player to start will automatically be X's )
+CHAR_SELECT = input() 
+
+    while True:
+        position_select()
+        for space in BOARD:
+            if QUAD_SELECT...
+            
+            
+
+
+
+
+
+
+    CHARACTERS:

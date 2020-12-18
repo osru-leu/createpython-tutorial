@@ -1,0 +1,26 @@
+Class Movies():
+    ''' Items class '''
+    def __init__(self): <---    Initialize(__init__) Allows you to set class variables within a class for later use. 
+        self.class_name = type(self).__name__           To use these variables they must be prefaced with -self- EX: print(self.class_name)
+        self.logger = logging.getLogger(self.class_name)     <-- sets up the "Logger". Calls the logger so that you can setup terminal output messages
+        self.collection_name = snake_case(self.class_name)       like info: EX: 
+                                                                2020-06-13 18:03:52,841 | werkzeug | INFO | 127.0.0.1 - - [13/Jun/2020 18:03:52] "POST /movies HTTP/1.1" 201
+                                                                so running... 
+                                                                self.logger.info(self.collection_name) in say the get_all method of movies.py:
+                                                                def get_all(self):
+                                                                    ''' get all movies'''
+                                                                    self.logger.info(collection_name)
+                                                                
+                                                                This will output: 
+                                                                2020-06-13 18:03:52,841 | werkzeug | INFO | movies
+                                                                AS movies IS THE NAME OF THE .py(movies.py) THAT OUR class Movies is in.
+
+
+
+    def get_all(self):
+        ''' get all movies '''
+        self.logger.info(list(self.collection.find({})))
+        return {
+            'result': list(self.collection.find({}, {'_id': 0})) #'result': list(self.collection.find({}, {'_id': 0, 'genre': 1}))
+        }, 200                                             |         
+                                                by passing 0 you're saying pass nothing/dont pass this

@@ -1,0 +1,44 @@
+@NS.route("/<string:players>") #TicTacToe
+class PlayersCollection(Resource):
+    '''Tic Tac Toe Collection Methods '''
+
+    def get(self):
+        ''' returns a list of all players '''
+        return Game().get_all()
+    #def delete all?
+
+@NS.route("/<string:player>")
+class Player(Resource):
+    ''' single player methods '''
+
+    
+    @NS.expect(GAME, validate=True)
+    def post(self):
+        ''' creates a new player '''
+        return Game().create_one(request.get_json)
+
+    def get(self, username):
+        ''' gets a player by username '''
+        return Game().get_one(username)
+    
+    def put(self, username):
+        ''' updates a player '''
+        return Game().update_one(username, request.json)
+
+    def delete(self, username):
+        ''' deletes a player by username '''
+        return Game().delete_one(username)
+
+@NS.route("/<string:players>")
+class ActivePlayerCollection(Resource):
+    ''' online/offline player methods '''
+
+    @NS.doc(parser=GET_PARSER)
+    def get(self):          #this has to be under a different class?
+        '''returns a list of players online or offline by selection'''
+        args = GET_PARSER.parse_args()
+        print(f'args={args}')
+        return Game().get_all(args['state'])    
+# @NS.route("")
+# class PlayerHistory(Resource):
+

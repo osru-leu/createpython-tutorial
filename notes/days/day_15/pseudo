@@ -1,0 +1,34 @@
+movie psuedo rando items
+
+
+Blockbuster is the stack name.
+    -utils/db_util.py: db_name = 'Blockbuster"
+
+
+
+
+The collection name is movies
+    -self.collection = DBUtil().get_collection(self.collection_name):
+        -gets me 'movies'
+
+In the movies collection are documents-the indivivdual movies
+    -
+
+
+
+ISSUES:
+    squigglies under settings in db_util    
+        -if all pys are complete and in order, the fallback:
+            -copy and paste entire day day_14 folder and
+            and remake necessary Blockbuster changes 
+
+DATABASE IMPORT SUCCESSFUL
+NEXT:
+-Create a py 
+    -should be able to give commands and receive commands through
+     input funct.
+        Commands: 
+            -add
+            -delete
+            -find
+        Commands need to execute action in the datatbase

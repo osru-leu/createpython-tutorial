@@ -1,0 +1,3 @@
+The difference between composition and inheritance:
+    inheritance transfters attributes and methods used in one class to another. 
+    Composition means that a base class isnt inherited from.

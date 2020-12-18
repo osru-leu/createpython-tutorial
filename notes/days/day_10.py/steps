@@ -1,0 +1,157 @@
+1st build out current code for checkss on yes no inputs
+2nd look at outsourcing those things to new or existing functions
+THE IFFY ONE:
+    3rd once the above are done, look at integrating these things with classes. 
+
+BUILD, THEN REFINE. BUILD, THEN REFINE, BUILD, THE REFINE. 
+START WITH THE BASICS
+MAKE IT WORK
+THEN MAKE IT BETTER
+
+def loop_check(command):
+    while True:
+        if command == 'N':
+            break   
+        elif command != 'N':
+            print("Only 'Y' or 'N' are valid commands ")
+            break
+
+        
+    return command
+
+
+ # while True:
+            #     non_entry = input('Are you sure you would like to skip Y/N? !CATEGORY WILL BE LISTED AS "None"!.').upper()
+            #     if non_entry== 'N':
+            #         return command         
+            #     if non_entry =='Y':
+            #         break
+            #     else:
+            #         print('code reached')
+
+
+def if_zip(self,zipcode):
+        while True:
+            if not self.zipcode.isdigit():
+                print('ZIPCODE MUST BE IN A NUMBERICAL FORMAT')
+            elif len(self.zipcode) < int(5):
+                print('ZIPCODE MUST BE IN A 5 DIGIT FORMAT')
+            return zipcode
+
+while True:
+    ACTION = input(would you like to input an address (Y/N)?)
+        if no:
+            exit out in total
+            print(thank you for using python Addy)
+            break
+        elif yes:
+            SUB_ACTION = input('would you like to add a -HOME- or -WORK- address or (EXIT)?).upper()
+            
+            if SUB_ACTION = 'EXIT':
+                break '''only break if 'exit' is typed'''
+            if SUB_ACTION == 'HOME':
+                HOME_ADDRESS = get_address_from_user()
+                #append here?
+            if SUB_ACTION =='WORK':
+                WORK_ADDDRESS = get_address_from_user()
+                #append here?
+            else:
+                print(f'{SUB_ACTION} is in an invalid command)
+            while True:
+                PHONE_ACTION = input('Would you like to add a phone number as well (Y/N)?').upper()
+                if PHONE_ACTION == 'N':
+                    break '''only break if 'exit' is typed'''
+                if PHONE_ACTION == 'Y':
+                    PHONE_ACTION = get_phone_number_from_user()
+                    #append here?
+                else:
+                    print(f'{PHONE_ACTION} is invalid please input a valid command)
+                
+            
+        else:
+            print(f'{ACTION} is invalid please in put a valid command)
+
+            GIVE LIST OPTION ONCE ENTRYS ARE IN
+
+            if list:
+            NAME.display(2) gotta figure this input out
+            PHONE_ACTION.display(3)
+            HOME_ADDRESS.display(4)
+            WORK_ADDDRESS.display(4)
+
+            then figure out how to append
+                -a place to append phone numbers to separate from addresses?
+            then figure out returning the phone number in the proper format
+
+            if no address you have no addresses to list
+
+HOW DO I CHECK CODE WHEN UTILIZING CLASS OBJECTS SO THE INPUT ISNT A FREE FOR ALL?
+HOW DO I APPEND?
+
+5/26/20
+The Goal: TO HAVE A SHORT MAIN APPLICATION THAT CALLS TO ITS CLASS FUNCTIONS FOR NEEDED PROCESSES.
+- shorten your app.py code by outsourcing to your classes 
+- Create getters and setters for address
+
+Starting point
+-trace back def display() in contact in your application vs Dean's.
+-rework your phone number situation by calling a phone function that perfomrs the needed processes.
+    maybe by just engaging in the process you can get the gears turning
+-check.....
+WATCH MORE TUTORIALS ON CLASSES. THIS WILL HELP SOLIDIFY THE CONCEPTS. MAYBE WRITE OUT THE PROCESSES
+THAT ARE HAPPENING IN DEAN'S PROGRAM
+
+
+Step 1) Start new app.py
+        Make new While loop
+        Start trace back with 'add' if statement and integrate your code. 
+                (Its okay that you are copying a code. You have to learn it some how. Copying it
+                will help you learn it as you type it and run it and see the results)
+
+
+
+                figure out how to store your shit in the database using thursdays CODE lesson
+                on database 
+                use mongos methods with your addressbook #THIS MIGHT BE FOR A LATER DATE? YES 
+                THIS IS FOR A LATER DATE
+
+                USE update_one to change a dict item in the database in day_13
+
+
+                5/31/20 newapp1.1py
+
+                Add a search by option?
+                ACTION = input('Would you like to search by name or address?)
+                if ACTION == 'name':
+                    call function containing for loop
+                def find_by_name(self):  <---probably going to use a method 
+                    SUB_ACT = what is the name?
+                    for i in contacts:
+                        if i == SUB_ACT:
+                            return i
+                        else:
+                            return None
+
+Things to add to program:
+when ADDing a contact:
+    check the list for existing contacts. if one exists offer to delete the current contact or to modify it.
+    to check list:
+        for loop through.
+        for name in contacts:
+            if name == self.contacts.name:
+            return 'name contact already exists. would you like to modify or overwrite contact?
+
+
+
+
+
+delete contact by name or by address
+The path by name:
+    - ADDRESS_BOOK.delete_contact(get_name_from_user())
+    Address_book.py-->delete_contact method ---> back to app.py and get_name_from_user function- DONE
+by address : DONE
+if entry == multiple current contacts
+    -ask-which contact you like to delete?
+    HOW CAN I AUTOMATICALLY ASSIGIN AN ID TO AN ENTRY?
+        -THEN RETURN THE ENTRY WITH THE ID? enumerate? pandas and factorize?
+    -return matching contacts(list)

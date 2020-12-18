@@ -1,0 +1,5 @@
+Captial First and Last Name check. Ex: 'Bob Smith'
+    '^[A-Z]{1}[a-z]+( )[A-Z]{1}[a-z]+$'
+
+10 digit phone number with dashes. Ex: 123-456-7890
+    '^[0-9]{3}-[0-9]{3}-[0-9]{4}$'

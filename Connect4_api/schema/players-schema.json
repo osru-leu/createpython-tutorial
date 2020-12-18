@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Player",
+    "type": "object",
+
+    "properties": {
+        "playerId":{
+            "type": "integer"
+        },
+        "displayName": {
+            "type": "string",
+            "unique": true
+        }
+    }
+}
